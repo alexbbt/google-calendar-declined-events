@@ -1,20 +1,20 @@
 # Google Calendar – Declined Events Toggle
 
-**One-click toggle** to show/hide **declined events** in Google Calendar, surfacing the deep preference without hunting through settings.
+One-click toggle to **show/hide declined events** in Google Calendar. Click the toolbar icon and the extension will open Calendar **Settings → View options**, toggle the checkbox, then close the temporary tab. The icon badge shows `ON` when declined events are shown.
 
-## What it does
-- Adds a toolbar button that toggles the “Show declined events” preference.
-- Persists your last state so you can flip it quickly.
+> Note: The selector currently matches the English label “Show declined events”. For other languages, update the `TEXT_MATCHES` array in `background.js`.
 
 ## Install (dev)
-1. `git clone https://github.com/alexbbt/google-calendar-declined-events.git`
-2. `cd google-calendar-declined-events`
-3. Load in Chrome: `chrome://extensions` → Enable **Developer mode** → **Load unpacked** → select this folder.
+1. Download/unzip this repo.
+2. Visit `chrome://extensions`, enable **Developer mode**.
+3. Click **Load unpacked** and select this folder.
+4. Pin the extension, then click the toolbar icon to toggle.
 
-## Roadmap
-- Optional keyboard shortcut
-- Badge state indicator
-- Firefox support (Manifest v3-compatible APIs)
+## Permissions
+- `host_permissions`: `https://calendar.google.com/*` to access the Calendar Settings page.
+- `scripting`: injects the small script that clicks the checkbox.
+- `tabs`: opens and closes the settings tab.
+- `storage`: reserved for future features (e.g., user preferences).
 
 ## License
 MIT
